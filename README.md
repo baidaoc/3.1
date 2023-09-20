@@ -1,22 +1,29 @@
 # 3.1
 #include <iostream>
 using namespace std;
-
-long fact(int);
+ 
 int main()
 {
-    int n = 12;
-    unsigned long long factorial = 1;
-    factorial = fact(n);
-    cout<<n<<"!="<<factorial<<endl;
-    return 0 ;
-}
-
-long fact(int ip) {
-    if (ip == 1) {
-        return 1;
+    int year;
+ 
+    cout << "输入年份: ";
+    cin >> year;
+ 
+    if (year % 4 == 0)
+    {
+        if (year % 100 == 0)
+        {
+            // // 这里如果被 400 整除是闰年
+            if (year % 400 == 0)
+                cout << year << " 是闰年";
+            else
+                cout << year << " 不是闰年";
+        }
+        else
+            cout << year << " 是闰年";
     }
-    else {
-        return ip * fact(ip - 1);
-    }
+    else
+        cout << year << " 不是闰年";
+ 
+    return 0;
 }
